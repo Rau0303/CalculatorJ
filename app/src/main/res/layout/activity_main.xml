@@ -7,16 +7,32 @@
     android:background="#B8B8B8"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="409dp"
+    <EditText
+        android:id="@+id/numberController"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="30pt"
+        android:text="@string/zero"
+        android:gravity="center|right"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="404dp"
+        android:layout_height="558dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
+
+
         <!--1-->
         <Button
             android:id="@+id/buttonAC"
@@ -24,7 +40,9 @@
             android:layout_height="100dp"
             android:backgroundTint="@color/spaceGrey"
             android:text="@string/AC"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="Clean"
+            />
 
         <Button
             android:id="@+id/buttonPlusAndMinus"
@@ -34,7 +52,9 @@
             android:layout_toEndOf="@+id/buttonAC"
             android:backgroundTint="@color/spaceGrey"
             android:text="@string/plusAndMinus"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="modul"
+            />
 
         <Button
             android:id="@+id/buttonPercent"
@@ -44,7 +64,9 @@
             android:layout_toEndOf="@+id/buttonPlusAndMinus"
             android:backgroundTint="@color/spaceGrey"
             android:text="@string/percent"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="CalculatePercent"
+            />
 
         <Button
             android:id="@+id/buttonDiv"
@@ -54,7 +76,9 @@
             android:layout_toEndOf="@+id/buttonPercent"
             android:backgroundTint="@color/orange"
             android:text="@string/div"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="arithmetic"
+            />
 
 
         <!--2-->
@@ -66,7 +90,9 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/grey"
             android:text="@string/seven"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonEight"
@@ -78,7 +104,9 @@
             android:layout_toEndOf="@+id/buttonSeven"
             android:backgroundTint="@color/grey"
             android:text="@string/eight"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonNine"
@@ -90,7 +118,9 @@
             android:layout_toEndOf="@+id/buttonEight"
             android:backgroundTint="@color/grey"
             android:text="@string/nine"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonMul"
@@ -102,7 +132,10 @@
             android:layout_toEndOf="@+id/buttonNine"
             android:backgroundTint="@color/orange"
             android:text="@string/mul"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="arithmetic"
+
+            />
 
 
         <!--3-->
@@ -114,7 +147,9 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/grey"
             android:text="@string/four"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonFive"
@@ -126,7 +161,9 @@
             android:layout_toEndOf="@+id/buttonFour"
             android:backgroundTint="@color/grey"
             android:text="@string/five"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonSix"
@@ -138,7 +175,9 @@
             android:layout_toEndOf="@+id/buttonFive"
             android:backgroundTint="@color/grey"
             android:text="@string/six"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonMinus"
@@ -150,7 +189,10 @@
             android:layout_toEndOf="@+id/buttonSix"
             android:backgroundTint="@color/orange"
             android:text="@string/minus"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="arithmetic"
+
+            />
 
         <!--4-->
         <Button
@@ -161,7 +203,9 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/grey"
             android:text="@string/one"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonTwo"
@@ -173,7 +217,9 @@
             android:layout_toEndOf="@+id/buttonOne"
             android:backgroundTint="@color/grey"
             android:text="@string/two"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonThree"
@@ -185,7 +231,9 @@
             android:layout_toEndOf="@+id/buttonTwo"
             android:backgroundTint="@color/grey"
             android:text="@string/three"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonPlus"
@@ -197,7 +245,10 @@
             android:layout_toEndOf="@+id/buttonThree"
             android:backgroundTint="@color/orange"
             android:text="@string/plus"
-            android:textSize="25sp" />
+            android:textColor="#FAFAFA"
+            android:textSize="25sp"
+            android:onClick="arithmetic"
+            />
         <!--5-->
         <Button
             android:id="@+id/buttonZero"
@@ -207,7 +258,9 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/grey"
             android:text="@string/zero"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapNumber"
+            />
 
         <Button
             android:id="@+id/buttonCommo"
@@ -231,21 +284,12 @@
             android:layout_toEndOf="@+id/buttonCommo"
             android:backgroundTint="@color/orange"
             android:text="@string/equal"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="result"
+            />
 
 
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
