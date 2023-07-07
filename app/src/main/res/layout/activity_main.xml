@@ -67,7 +67,7 @@
             android:backgroundTint="@color/spaceGrey"
             android:text="@string/percent"
             android:textSize="25sp"
-            android:onClick="arithmetic"
+            android:onClick="CalculatePercent"
             />
 
         <Button
@@ -265,7 +265,7 @@
             />
 
         <Button
-            android:id="@+id/buttonCommo"
+            android:id="@+id/buttonDot"
             android:layout_width="95dp"
             android:layout_height="100dp"
             android:layout_below="@+id/buttonThree"
@@ -274,7 +274,9 @@
             android:layout_toEndOf="@+id/buttonZero"
             android:backgroundTint="@color/grey"
             android:text="@string/comma"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:onClick="onTapDot"
+            />
 
         <Button
             android:id="@+id/buttonEqual"
@@ -283,7 +285,7 @@
             android:layout_below="@+id/buttonPlus"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
-            android:layout_toEndOf="@+id/buttonCommo"
+            android:layout_toEndOf="@+id/buttonDot"
             android:backgroundTint="@color/orange"
             android:text="@string/equal"
             android:textSize="25sp"

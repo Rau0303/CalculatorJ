@@ -10,7 +10,8 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     String oldNumber ;
     String newNumber;
-    String arithmeticOperation;
+    String arithmeticOperation = "";
+    boolean isDot = false;
     EditText editText;
     Button AC;
     boolean isNull = true;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             editText.setText("");
             AC.setText("C");
             isNull = false;
+            isDot = false;
         }
 
         String number = editText.getText().toString();
@@ -93,11 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 arithmeticOperation = "*";
                 isNull = true;
                 break;
-            case R.id.buttonPercent:
-                Double Res = Double.parseDouble(oldNumber)/100.0;
-                System.out.println(Res);
-                editText.setText(Res.toString());
-                break;
         }
     }
 
@@ -126,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         if(editText.getText().toString()!="0"){
             editText.setText("0");
             AC.setText("AC");
+            isDot = false;
             isNull = true;
         }
     }
@@ -137,6 +135,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void CalculatePercent(View view) {
+        if(arithmeticOperation==""){
+            oldNumber = editText.getText().toString();
+            Double Res = Double.parseDouble(oldNumber)/100;
+            editText.setText(Res.toString());
+        }
+        else{
+            Double Result = 0.0;
+            newNumber = editText.getText().toString();
+            switch (arithmeticOperation){
+                case "+":
+                    Result = Double.parseDouble(oldNumber) * Double.parseDouble(newNumber)/100;
+                    break;
+                case "-":
+                    Result =Double.parseDouble(oldNumber) * Double.parseDouble(newNumber)/100;
+                    break;
+                case "*":
+                    Result =Double.parseDouble(oldNumber) * Double.parseDouble(newNumber)/100;
+                    break;
+                case "/":
+                    Result =Double.parseDouble(oldNumber) / Double.parseDouble(newNumber)/100;
+                    break;
+            }
+            editText.setText(Result.toString());
+        }
 
+    }
+
+    public void onTapDot(View view) {
+        if(!isDot){
+            editText.setText(editText.getText() + ".");
+            isDot = true;
+        }
     }
 }
