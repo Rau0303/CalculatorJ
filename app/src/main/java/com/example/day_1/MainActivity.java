@@ -151,10 +151,10 @@ public class MainActivity extends AppCompatActivity {
                     Result =Double.parseDouble(oldNumber) * Double.parseDouble(newNumber)/100;
                     break;
                 case "*":
-                    Result =Double.parseDouble(oldNumber) * Double.parseDouble(newNumber)/100;
+                    Result =Double.parseDouble(newNumber)/100;
                     break;
                 case "/":
-                    Result =Double.parseDouble(oldNumber) / Double.parseDouble(newNumber)/100;
+                    Result = Double.parseDouble(newNumber)/100;
                     break;
             }
             editText.setText(Result.toString());
