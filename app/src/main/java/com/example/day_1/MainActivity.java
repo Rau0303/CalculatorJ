@@ -40,31 +40,67 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()){
             case R.id.buttonOne:
-                number = number + "1";
+                if (number.equals("0")) {
+                    number = "1";
+                } else {
+                    number += "1";
+                }
                 break;
             case R.id.buttonTwo:
-                number = number + "2";
+                if (number.equals("0")) {
+                    number = "2";
+                } else {
+                    number += "2";
+                }
                 break;
             case R.id.buttonThree:
-                number = number + "3";
+                if (number.equals("0")) {
+                    number = "3";
+                } else {
+                    number += "3";
+                }
                 break;
             case R.id.buttonFour:
-                number = number + "4";
+                if (number.equals("0")) {
+                    number = "4";
+                } else {
+                    number += "4";
+                }
                 break;
             case R.id.buttonFive:
-                number = number + "5";
+                if (number.equals("0")) {
+                    number = "5";
+                } else {
+                    number += "5";
+                }
                 break;
             case R.id.buttonSix:
-                number = number + "6";
+                if (number.equals("0")) {
+                    number = "6";
+                } else {
+                    number += "6";
+                }
                 break;
             case R.id.buttonSeven:
-                number = number + "7";
+                if (number.equals("0")) {
+                    number = "7";
+                } else {
+                    number += "7";
+                }
                 break;
             case R.id.buttonEight:
-                number = number + "8";
+                if (number.equals("0")) {
+                    number = "8";
+                } else {
+                    number += "8";
+                }
                 break;
             case R.id.buttonNine:
-                number = number + "9";
+                if (number.equals("0")) {
+                    number = "9";
+                } else {
+                    number += "9";
+                }
                 break;
             case R.id.buttonZero:
                 if (!number.equals("0")) {
@@ -73,9 +109,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
-
-        editTextLis();
-        editText.setText(number);
+        String curNumber = sizeFormat(number);
+        String formattedResult = formatResult(curNumber, 10);
+        editText.setText(formattedResult);
     }
 //кнопка ар + - * /
     public void arithmetic(View view) {
@@ -122,7 +158,11 @@ public class MainActivity extends AppCompatActivity {
                 isDot = true;
                 break;
         }
-        editText.setText(Result.toString());
+
+        String formattedResult = formatResult(Result.toString(), 10);
+
+        editText.setText(formattedResult);
+        arithmeticOperation = "";
     }
 //кнопка АС
     public void Clean(View view) {
@@ -143,9 +183,9 @@ public class MainActivity extends AppCompatActivity {
     }
 //кнопка %
     public void CalculatePercent(View view) {
-        if(arithmeticOperation==""){
+        if (arithmeticOperation.equals("")) {
             oldNumber = editText.getText().toString();
-            Double Res = Double.parseDouble(oldNumber)/100;
+            Double Res = Double.parseDouble(oldNumber) / 100;
             isDot = true;
             editText.setText(Res.toString());
         }
@@ -170,7 +210,8 @@ public class MainActivity extends AppCompatActivity {
                     isDot = true;
                     break;
             }
-            editText.setText(Result.toString());
+            String curNumber = sizeFormat(Result.toString());
+            editText.setText(curNumber);
 
         }
 
@@ -178,18 +219,47 @@ public class MainActivity extends AppCompatActivity {
 // кнопка точка
     public void onTapDot(View view) {
         if (!isDot && !editText.getText().toString().contains(".")) {
-            editText.setText(editText.getText() + ".");
+            String currentNumber = editText.getText().toString();
+            if (currentNumber.equals("0")) {
+                currentNumber = "0.";
+            } else {
+                currentNumber += ".";
+            }
+            editText.setText(currentNumber);
             isDot = true;
         }
     }
-// по идеи бесполезная функция
-    private void editTextLis(){
-        oldNumber = editText.getText().toString();
-        if(oldNumber.length()>8){
-            editText.setTextSize(50);
+
+
+    private String formatResult(String result, int maxLength) {
+        String resultString = result;
+        resultString = resultString.replaceAll("[.,]0*$", "");
+        if (resultString.length() > maxLength) {
+            resultString = resultString.substring(0, maxLength);
         }
-        else{
-            editText.setTextSize(70);
+
+        return resultString;
+    }
+
+    private String sizeFormat(String number){
+        String newNumber = number;
+        switch (newNumber.length()){
+            case 6:
+                editText.setTextSize(67);
+                break;
+            case 7:
+                editText.setTextSize(65);
+                break;
+            case 8:
+                editText.setTextSize(62);
+                break;
+            case 9:
+                editText.setTextSize(59);
+                break;
+            case 10:
+                editText.setTextSize(50);
+                break;
         }
+        return newNumber;
     }
 }
