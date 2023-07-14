@@ -159,10 +159,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        String formattedResult = formatResult(Result.toString(), 10);
+        String formattedResult = formatResult(Result.toString(), 9);
 
         editText.setText(formattedResult);
-        arithmeticOperation = "";
     }
 //кнопка АС
     public void Clean(View view) {
