@@ -9,13 +9,15 @@
 
     <EditText
         android:id="@+id/numberController"
+        android:autofillHints="username"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="0dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="textPersonName"
         tools:ignore="LabelFor"
-        android:textSize="30pt"
+        android:textSize="60pt"
+        android:maxLength="7"
         android:text="@string/zero"
         android:gravity="center|right"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
@@ -23,62 +25,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="404dp"
-        android:layout_height="558dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numberController"
         app:layout_constraintVertical_bias="1.0">
 
 
         <!--1-->
         <Button
             android:id="@+id/buttonAC"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:backgroundTint="@color/spaceGrey"
             android:text="@string/AC"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="Clean"
             />
 
         <Button
             android:id="@+id/buttonPlusAndMinus"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/buttonAC"
             android:backgroundTint="@color/spaceGrey"
             android:text="@string/plusAndMinus"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="modul"
             />
 
         <Button
             android:id="@+id/buttonPercent"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/buttonPlusAndMinus"
             android:backgroundTint="@color/spaceGrey"
             android:text="@string/percent"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="CalculatePercent"
             />
 
         <Button
             android:id="@+id/buttonDiv"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/buttonPercent"
             android:backgroundTint="@color/orange"
             android:text="@string/div"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="arithmetic"
             />
 
@@ -86,55 +87,55 @@
         <!--2-->
         <Button
             android:id="@+id/buttonSeven"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonAC"
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/grey"
             android:text="@string/seven"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonEight"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonPlusAndMinus"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonSeven"
             android:backgroundTint="@color/grey"
             android:text="@string/eight"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonNine"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonPercent"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonEight"
             android:backgroundTint="@color/grey"
             android:text="@string/nine"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonMul"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonDiv"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonNine"
             android:backgroundTint="@color/orange"
             android:text="@string/mul"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="arithmetic"
 
             />
@@ -143,55 +144,55 @@
         <!--3-->
         <Button
             android:id="@+id/buttonFour"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonSeven"
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/grey"
             android:text="@string/four"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonFive"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonEight"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonFour"
             android:backgroundTint="@color/grey"
             android:text="@string/five"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonSix"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonNine"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonFive"
             android:backgroundTint="@color/grey"
             android:text="@string/six"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonMinus"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonMul"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonSix"
             android:backgroundTint="@color/orange"
             android:text="@string/minus"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="arithmetic"
 
             />
@@ -199,48 +200,48 @@
         <!--4-->
         <Button
             android:id="@+id/buttonOne"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonFour"
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/grey"
             android:text="@string/one"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonTwo"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonFive"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonOne"
             android:backgroundTint="@color/grey"
             android:text="@string/two"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonThree"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonSix"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonTwo"
             android:backgroundTint="@color/grey"
             android:text="@string/three"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonPlus"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonMinus"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
@@ -248,47 +249,47 @@
             android:backgroundTint="@color/orange"
             android:text="@string/plus"
             android:textColor="#FAFAFA"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="arithmetic"
             />
         <!--5-->
         <Button
             android:id="@+id/buttonZero"
-            android:layout_width="195dp"
-            android:layout_height="100dp"
+            android:layout_width="445dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonOne"
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/grey"
             android:text="@string/zero"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapNumber"
             />
 
         <Button
             android:id="@+id/buttonDot"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonThree"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonZero"
             android:backgroundTint="@color/grey"
             android:text="@string/comma"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="onTapDot"
             />
 
         <Button
             android:id="@+id/buttonEqual"
-            android:layout_width="95dp"
-            android:layout_height="100dp"
+            android:layout_width="220dp"
+            android:layout_height="180dp"
             android:layout_below="@+id/buttonPlus"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/buttonDot"
             android:backgroundTint="@color/orange"
             android:text="@string/equal"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:onClick="result"
             />
 
